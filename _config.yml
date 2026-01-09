@@ -1,13 +1,13 @@
 # Site settings
-title: 2019 SoCal Robotics Symposium
+title: CV4Edu 2026
 
-url: http://scr2019.caltech.edu/
+url: http://cv4edu2026.github.io
 baseurl: ''
 
-conference_title: "Southern California Robotics Symposium"
-conference_title_short: "SCR"
-year: "2019"
-infoline_text: "Thanks for attending SCR 2019, see you again next year!"
+conference_title: "Computer Vision × Education: building a cross‑community agenda for multimodal vision in classrooms"
+conference_title_short: "CV4Edu"
+year: "2026"
+infoline_text: ""
 
 # Color settings
 color:
@@ -17,19 +17,19 @@ color:
   accent: '#B89E8F'
 
 # conference data
-background-image: img/afa2_desert_iso.png
-directions-link: http://directions.link.com
-map-embed: https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3302.323048471302!2d-118.12734598467776!3d34.13807638058268!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80c2c4a7f5e60b13%3A0xc12af3fcb43bc03d!2sRamo+Auditorium!5e0!3m2!1sen!2sus!4v1546639172046
-organizer-email : organizer@email.com
-registration-page : http://registration.com
-upload-form: http://paperupload.com
+#background-image: img/afa2_desert_iso.png
+#directions-link: http://directions.link.com
+map-embed: https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6135.754063846231!2d-105.00168490477958!3d39.74241298622359!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x876c78d1f0a37907%3A0x2387761e48aca169!2s700%2014th%20St%2C%20Denver%2C%20CO%2080202%2C%20USA!5e0!3m2!1sde!2sde!4v1767974882798!5m2!1sde!2sde
+organizer-email1: ekta.sood@colorado.edu
+organizer-email2: joyce.h.fonteles@vanderbilt.edu
+#registration-page : http://registration.com
+#upload-form: http://paperupload.com
 
 collections:
   - invited_speakers
   - organizers
   - sessions
   - papers
-  - advisors
 
 # Build settings
 markdown: kramdown

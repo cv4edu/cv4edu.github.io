@@ -1,6 +1,6 @@
 ---
-name: John Doe
-title:  Title
+name: Paul Gavrikov
+title:  Organizer
 image: https://via.placeholder.com/400
-link: http://website.com
+link: 
 ---

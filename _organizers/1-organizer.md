@@ -1,6 +1,6 @@
 ---
-name: John Doe
-title:  Title
+name: Ekta Sood
+title:  Primary organizer
 image: https://via.placeholder.com/400
-link: http://website.com
+link: https://www.colorado.edu/ics/ekta-sood
 ---

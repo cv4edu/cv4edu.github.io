@@ -13,7 +13,8 @@
   height: 500px;
   margin: auto;
   overflow: auto;
-  background-image: url({{site.background-image}});
+  /*background-image: url({{site.background-image}});*/
+  background-color: black;
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;
