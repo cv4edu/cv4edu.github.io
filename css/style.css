@@ -8,13 +8,17 @@
   background-color: {{site.color.primary-dark}};
 }
 
+.nav div ul li a {
+  color: black;
+}
+
 .banner{
   max-width:100%;
   height: 500px;
   margin: auto;
   overflow: auto;
   /*background-image: url({{site.background-image}});*/
-  background-color: black;
+  background-color: white;
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;
@@ -61,7 +65,7 @@
 }
 
 #secondary-title-text{
-  color:#ffffff;
+  color:#000000;
   font-size:12px;
   line-height: normal;
 }
@@ -120,6 +124,7 @@
 }
 
 .card-title{
+  color: black;
   white-space: nowrap;
 }
 
@@ -189,3 +194,6 @@
   padding-left: 15px;
 }
 
+.col {
+  padding-bottom: 40px !important; /* adds space inside each row */
+}

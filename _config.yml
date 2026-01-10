@@ -11,8 +11,8 @@ infoline_text: ""
 
 # Color settings
 color:
-  primary-dark: '#3D1419'
-  title: '#ebf0f4'
+  primary-dark: '#F2F2F2'
+  title: '#000000'
   links: '#219ab3'
   accent: '#B89E8F'
 
