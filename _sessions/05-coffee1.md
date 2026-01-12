@@ -1,5 +1,5 @@
 ---
-time: 10.30AM
+time: 2:20PM
 name: coffee
-title: Coffee Break
+title: Poster Session 1 + Coffee Break
 ---

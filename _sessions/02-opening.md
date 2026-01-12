@@ -1,5 +1,5 @@
 ---
-time: 9:00AM
+time: 1:00PM
 name: opening
-title: Opening, goals, code of conduct, how outputs are captured
+title: Opening & Goals
 ---
