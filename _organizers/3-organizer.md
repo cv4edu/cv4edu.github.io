@@ -1,6 +1,6 @@
 ---
 name: Mariah Bradford
 title: Organizer  
-image: https://via.placeholder.com/400
+image: img/mariahbradford.jpg
 link: 
 ---

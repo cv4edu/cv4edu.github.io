@@ -1,6 +1,6 @@
 ---
 name: Prajit Dhar
 title:  Organizer
-image: https://via.placeholder.com/400
+image: img/prajitdhar.jpg
 link: 
 ---

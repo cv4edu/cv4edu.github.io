@@ -1,6 +1,6 @@
 ---
 name: Janis Pagel
 title:  Organizer
-image: https://via.placeholder.com/400
+image: img/janispagel.jpg
 link: 
 ---
