@@ -118,6 +118,9 @@
   text-align:center;
   font-weight:bold;
   color:{{site.color.title}};
+  overflow-wrap: anywhere;
+  word-break: break-word;
+  hyphens: auto;  
 }
 
 .banner-subheading{
@@ -241,4 +244,3 @@
 .col {
   padding-bottom: 40px !important; /* adds space inside each row */
 }
-
