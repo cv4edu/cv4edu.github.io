@@ -1,6 +1,6 @@
 ---
 name: Janis Pagel
-title:  Organizer
+title: University of Cologne
 image: img/janispagel.jpg
 link: 
 ---

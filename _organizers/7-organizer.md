@@ -1,6 +1,6 @@
 ---
-name: Sidney D'Mello
-title:  Organizer
-image: img/sidneydmello.png
+name: Trisha Mital
+title: Dolby Laboratories
+image: img/trishamital.jpg
 link: 
 ---

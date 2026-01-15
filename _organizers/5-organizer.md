@@ -1,6 +1,6 @@
 ---
 name: Prajit Dhar
-title:  Organizer
+title: University of Marburg
 image: img/prajitdhar.jpg
 link: 
 ---

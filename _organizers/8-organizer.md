@@ -1,6 +1,6 @@
 ---
 name: Gautam Biswas
-title:  Organizer
+title: Vanderbilt University
 image: img/gautambiswas.png
 link: 
 ---

@@ -9,25 +9,36 @@
               </p>
             </div>
           </div>
+				
+				<div class="row">
+				  {% assign organizers_sorted = site.organizers | sort: "order_number" %}
+				  {% assign total = organizers_sorted | size %}
+				  {% assign remainder = total | modulo: 4 %}
+				
+				  {% for organizer in organizers_sorted %}
+				    {% assign is_last = forloop.last %}
+				    {% assign offset_class = "" %}
+				
+				    {% if is_last and remainder == 1 %}
+				      {% assign offset_class = "offset-l4" %}
+				    {% endif %}
+				
+				    <a href="{{ organizer.link }}">
+				      <div class="col s12 m6 l3 {{ offset_class }} center">
+				        <div class="card hoverable">
+				          <div class="card-image">
+				            <img class="activator portrait-img" src="{{ organizer.image }}">
+				            <span class="card-title" id="main-title">{{ organizer.name }}</span>
+				          </div>
+				          <div class="card-content" id="secondary-title">
+				            <span class="card-title activator" id="secondary-title-text">{{ organizer.title }}</span>
+				          </div>
+				        </div>
+				      </div>
+				    </a>
+				  {% endfor %}
+				</div>
 
-          <div class="row">
-            {% assign organizers_sorted = site.organizers | sort:"order_number" %}            
-            {% for organizers in organizers_sorted %}
-            <a href="{{organizers.link}}">
-              <div class="col s12 m6 l3">
-                <div class="card hoverable">
-                  <div class="card-image">
-                    <img class="activator portrait-img" src="{{organizers.image}}">
-                    <span class="card-title" id="main-title">{{organizers.name}}</span>
-                  </div>
-                  <div class="card-content" id="secondary-title">
-                    <span class="card-title activator" id="secondary-title-text">{{organizers.title}}</span>
-                  </div>
-                </div>
-              </div>
-            </a>
-            {% endfor %}
-          </div>
 
       </div> 
     </div>

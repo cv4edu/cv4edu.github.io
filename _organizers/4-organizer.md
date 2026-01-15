@@ -1,6 +1,6 @@
 ---
 name: Paul Gavrikov
-title:  Publicity Chair
+title: Independent researcher
 image: img/paulgavrikov.jpeg
 link: 
 ---

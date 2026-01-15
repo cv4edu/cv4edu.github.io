@@ -1,6 +1,6 @@
 ---
 name: Joyce Horn Fonteles
-title: Secondary organizer
+title: Vanderbilt University
 image: img/joycehornfonteles.png
 link: 
 ---

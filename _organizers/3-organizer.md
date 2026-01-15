@@ -1,6 +1,6 @@
 ---
 name: Mariah Bradford
-title: Organizer  
+title: Colorado State University
 image: img/mariahbradford.jpg
 link: 
 ---
