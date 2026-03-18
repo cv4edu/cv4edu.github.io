@@ -1,4 +1,6 @@
 _site
 Gemfile.lock
+.vs
+.jekyll-cache
 
 *.sublime-*
