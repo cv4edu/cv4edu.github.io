@@ -24,7 +24,7 @@ background-image: img/banner.png
 map-embed: https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6135.754063846231!2d-105.00168490477958!3d39.74241298622359!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x876c78d1f0a37907%3A0x2387761e48aca169!2s700%2014th%20St%2C%20Denver%2C%20CO%2080202%2C%20USA!5e0!3m2!1sde!2sde!4v1767974882798!5m2!1sde!2sde
 organizer-email1: cv4edu.cvpr@gmail.com
 #registration-page : http://registration.com
-upload-form: https://openreview.net/group?id=thecvf.com/CVPR/2026/Workshop/CV4Edu
+upload-form: https://openreview.net/group?id=thecvf.com/CVPR/2026/Workshop/CV4Edu_Non-Archival_Track
 
 collections:
   - invited_speakers
