@@ -7,7 +7,7 @@
             {% assign invited_speakers_sorted = site.invited_speakers | sort:"order_number" %}            
             {% for invited_speaker in invited_speakers_sorted %}
             <a href="#" data-target={{invited_speaker.id}} class="modal-trigger">
-              <div class="col s12 m6 l4">
+              <div class="col s12 m6 l3">
                 <div class="card hoverable">
                   <div class="card-image">
                     <img class="activator" src="{{invited_speaker.image}}">
