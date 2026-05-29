@@ -1,5 +1,5 @@
 ---
-time: 1:10PM
+time: 1:05PM
 name: talks1
-title: Keynotes
+title: Keynotes 1 and 2
 ---
