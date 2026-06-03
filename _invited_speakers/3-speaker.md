@@ -6,5 +6,5 @@ image: img/marceloworsley.jpg
 link: https://www.mccormick.northwestern.edu/research-faculty/directory/profiles/worsley-marcelo.html
 session: talks3
 priority: 1
-talk_title: Titles TBA
+talk_title: Title TBA
 ---
