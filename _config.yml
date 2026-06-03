@@ -28,9 +28,12 @@ upload-form: https://openreview.net/group?id=thecvf.com/CVPR/2026/Workshop/CV4Ed
 
 collections:
   - invited_speakers
+  - panelists
   - organizers
   - sessions
   - papers
+  - archival_papers
+  - nonarchival_papers
 
 # Build settings
 markdown: kramdown

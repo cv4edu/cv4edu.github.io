@@ -1,0 +1,37 @@
+<!-- Panelists section -->
+      <div class="section scrollspy section-white-section" id="panelists">
+        <div class="container">
+          <h4 class="center-align section-white-header">Panelists</h4>
+
+				<div class="row">
+				  {% assign panelists_sorted = site.panelists | sort: "order_number" %}
+				  {% assign total = panelists_sorted | size %}
+				  {% assign remainder = total | modulo: 4 %}
+				
+				  {% for panelist in panelists_sorted %}
+				    {% assign is_last = forloop.last %}
+				    {% assign offset_class = "" %}
+				
+				    {% if is_last and remainder == 1 %}
+				      {% assign offset_class = "offset-l4" %}
+				    {% endif %}
+				
+				    <a href="{{ panelist.link }}">
+				      <div class="col s12 m6 l3 {{ offset_class }} center">
+				        <div class="card hoverable">
+				          <div class="card-image">
+				            <img class="activator portrait-img" src="{{ panelist.image }}">
+				            <span class="card-title" id="main-title">{{ panelist.name }}</span>
+				          </div>
+				          <div class="card-content" id="secondary-title">
+				            <span class="card-title activator" id="secondary-title-text">{{ panelist.title }}</span>
+				          </div>
+				        </div>
+				      </div>
+				    </a>
+				  {% endfor %}
+				</div>
+
+
+      </div> 
+    </div>

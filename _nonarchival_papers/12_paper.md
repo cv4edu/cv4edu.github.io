@@ -1,0 +1,8 @@
+---
+author: Yanhang Li, Zhichao Fan, Zexin Zhuang
+title: "How Much Do We Lose? Quantifying the Impact of Face De-identification on Classroom Computer Vision Tasks"
+affiliation: Affiliation
+spotlight: no
+number: 8
+---
+**Abstract**: Classroom computer vision systems that monitor engagement, gaze, and affect rely on facial features, yet educational data involving minors demands strong privacy protections. Despite this tension, the privacy-utility tradeoff for classroom-relevant face analysis tasks has not been systematically quantified. We benchmark nine de-identification configurations spanning pixel-level, generative, and geometric approaches on gaze estimation, head pose estimation, and facial expression recognition. Using ArcFace re-identification rate as a privacy metric, we map the privacy-utility tradeoff and find that methods achieving meaningful privacy can completely eliminate gaze detection and reduce expression recognition to near chance. We further conduct a classroom-conditions ablation with simulated degradations including low resolution, occlusion, and non-frontal views, showing that these factors compound non-linearly with de-identification and substantially amplify performance losses. Our results also show that a VAE-based method preserves head pose better than pixel-level methods at comparable privacy, but still severely degrades expression-related features, suggesting that coarse spatial structure is easier to retain than fine-grained facial cues. These findings highlight a fundamental tension in privacy-preserving classroom analytics and motivate task-aware de-identification methods for educational computer vision.

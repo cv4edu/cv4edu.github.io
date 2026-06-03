@@ -1,0 +1,10 @@
+---
+author: Martyna Gruszka, Risa Shinoda, Taiki Miyanishi, Takumi Hirose, Nakamasa Inoue
+title: "MES-Bench: A Benchmark for Multimodal Elaborative Simplification and Comprehensibility Evaluation in Language Learning"
+affiliation: Affiliation
+spotlight: no
+number: 6
+---
+**Abstract**: Recently, alternatives to traditional translation-based language learning methods have gained increasing attention, particularly the Natural Approach, which emphasizes content that learners can understand through context rather than translation. This perspective motivates methods that make meaning inferable through contextual support, including elaborative text simplification, where clarifying information is added to improve comprehension. However, existing work has remained largely text-only, and while current Multimodal Large Language Models (MLLMs) can generate high-quality images, making multimodal image-caption elaborations increasingly feasible, such images are often overly generic and fail to provide the specific contextual cues needed to support the intended cognitive associations. Moreover, as such materials become easier to generate at scale, it remains unclear whether MLLMs can reliably evaluate their pedagogical comprehensibility. To study this problem, we introduce MES-Bench, a benchmark for evaluating the Multimodal Elaborative Simplification} (MES) task, that enables direct comparison between human and MLLM judgments through pairwise evaluation with both quantitative and qualitative feedback. Using this framework, we perform a human-MLLM study in which both groups evaluate the same flashcard-style elaboration pairs. The results show that their comprehensibility judgments are not interchangeable: models tend to prefer contrast-heavy designs, whereas humans are more sensitive to visual focus and contextual grounding. Motivated by these gaps, we derive a human-centered rubric for evaluating multimodal elaborations in language learning.
+
+[Poster](posters/12_MES-Bench-poster.pdf)

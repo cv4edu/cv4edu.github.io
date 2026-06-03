@@ -15,13 +15,28 @@
     </div>     
     {% endfor %}
 
-    <!-- Paper modals -->
-    {% for paper in site.papers %}
-      <div id={{paper.id}} class="modal">
+    <!-- Archival Paper modals -->
+    {% for archival_paper in site.archival_papers %}
+      <div id={{archival_paper.id}} class="modal">
         <div class="modal-content">
-          <h4>{{paper.title}}</h4>
-          <h5>{{paper.author}}</h5>
-          {{paper.content | markdownify}}
+          <h4>{{archival_paper.title}}</h4>
+          <h5>{{archival_paper.author}}</h5>
+          {{archival_paper.content | markdownify}}
+        </div>
+        <div class="modal-footer">
+          <a href="#!" class="modal-close waves-effect waves-green btn-flat">Close</a>
+        </div>
+      </div>     
+    {% endfor %}
+
+
+    <!-- Non-Archival Paper modals -->
+    {% for nonarchival_paper in site.nonarchival_papers %}
+      <div id={{nonarchival_paper.id}} class="modal">
+        <div class="modal-content">
+          <h4>{{nonarchival_paper.title}}</h4>
+          <h5>{{nonarchival_paper.author}}</h5>
+          {{nonarchival_paper.content | markdownify}}
         </div>
         <div class="modal-footer">
           <a href="#!" class="modal-close waves-effect waves-green btn-flat">Close</a>
