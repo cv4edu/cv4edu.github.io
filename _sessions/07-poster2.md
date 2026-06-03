@@ -1,5 +1,5 @@
 ---
-time: 3:00PM
+time: 3:15PM
 name: poster2
 title: Poster Session 2
 ---
