@@ -1,0 +1,835 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CV4Edu Poster Session</title>
+  <style>
+    :root {
+      --bg: #f6f8fc;
+      --panel: rgba(255, 255, 255, 0.88);
+      --panel-solid: #ffffff;
+      --text: #122033;
+      --muted: #5f6b7a;
+      --border: rgba(18, 32, 51, 0.12);
+      --accent: #2457ff;
+      --accent-2: #0e8f7b;
+      --shadow: 0 12px 34px rgba(16, 24, 40, 0.10);
+      --shadow-strong: 0 22px 60px rgba(16, 24, 40, 0.16);
+      --radius-xl: 28px;
+      --radius-lg: 22px;
+      --radius-md: 16px;
+      --radius-sm: 12px;
+      --maxw: 1440px;
+    }
+
+    * { box-sizing: border-box; }
+
+    html, body {
+      margin: 0;
+      padding: 0;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(circle at top left, rgba(36, 87, 255, 0.14), transparent 25%),
+        radial-gradient(circle at top right, rgba(14, 143, 123, 0.10), transparent 25%),
+        linear-gradient(180deg, #f9fbff 0%, var(--bg) 100%);
+      min-height: 100%;
+    }
+
+    a { color: inherit; }
+
+    .wrap {
+      width: min(calc(100% - 32px), var(--maxw));
+      margin: 0 auto;
+      padding: 28px 0 48px;
+    }
+
+    .hero {
+      background: var(--panel);
+      backdrop-filter: blur(10px);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-xl);
+      box-shadow: var(--shadow);
+      padding: 28px;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      inset: auto -120px -130px auto;
+      width: 320px;
+      height: 320px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(36, 87, 255, 0.12), transparent 68%);
+      pointer-events: none;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 12px;
+      border-radius: 999px;
+      background: rgba(36, 87, 255, 0.08);
+      color: var(--accent);
+      font-weight: 700;
+      font-size: 0.88rem;
+      letter-spacing: 0.01em;
+      margin-bottom: 14px;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: clamp(2rem, 3.5vw, 3.75rem);
+      line-height: 1.02;
+      letter-spacing: -0.04em;
+    }
+
+    .subtitle {
+      margin: 14px 0 0;
+      max-width: 900px;
+      font-size: clamp(1rem, 1.45vw, 1.15rem);
+      line-height: 1.65;
+      color: var(--muted);
+    }
+
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 14px;
+      margin-top: 24px;
+    }
+
+    .stat {
+      background: rgba(255, 255, 255, 0.78);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      padding: 16px 18px;
+      box-shadow: 0 4px 16px rgba(16, 24, 40, 0.04);
+    }
+
+    .stat .k {
+      display: block;
+      font-size: 0.82rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--muted);
+      margin-bottom: 8px;
+    }
+
+    .stat .v {
+      font-size: 1.25rem;
+      font-weight: 750;
+    }
+
+    .toolbar {
+      display: grid;
+      grid-template-columns: 1.3fr auto;
+      gap: 14px;
+      align-items: center;
+      margin-top: 22px;
+    }
+
+    .search {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      background: var(--panel-solid);
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      padding: 12px 16px;
+      box-shadow: 0 5px 18px rgba(16, 24, 40, 0.04);
+    }
+
+    .search svg {
+      flex: 0 0 auto;
+      color: var(--muted);
+    }
+
+    .search input {
+      border: 0;
+      outline: 0;
+      width: 100%;
+      font: inherit;
+      color: var(--text);
+      background: transparent;
+    }
+
+    .filters {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      justify-content: flex-end;
+    }
+
+    .chip {
+      border: 1px solid var(--border);
+      background: rgba(255, 255, 255, 0.82);
+      color: var(--text);
+      border-radius: 999px;
+      padding: 10px 14px;
+      cursor: pointer;
+      font: inherit;
+      font-weight: 650;
+      transition: transform 150ms ease, box-shadow 150ms ease, background 150ms ease, border-color 150ms ease;
+    }
+
+    .chip:hover { transform: translateY(-1px); box-shadow: 0 10px 24px rgba(16, 24, 40, 0.08); }
+    .chip.active {
+      background: rgba(36, 87, 255, 0.09);
+      border-color: rgba(36, 87, 255, 0.25);
+      color: var(--accent);
+    }
+
+    .content {
+      margin-top: 22px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .card {
+      background: rgba(255, 255, 255, 0.92);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      min-height: 100%;
+      transition: transform 160ms ease, box-shadow 160ms ease;
+    }
+
+    .card:hover {
+      transform: translateY(-3px);
+      box-shadow: var(--shadow-strong);
+    }
+
+    .poster {
+      position: relative;
+      aspect-ratio: 1.45 / 1;
+      background: linear-gradient(135deg, rgba(36, 87, 255, 0.10), rgba(14, 143, 123, 0.08));
+      border-bottom: 1px solid var(--border);
+      overflow: hidden;
+      cursor: zoom-in;
+    }
+
+    .poster img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      display: block;
+    }
+
+    .poster .fallback {
+      position: absolute;
+      inset: 0;
+      display: grid;
+      place-items: center;
+      padding: 24px;
+      text-align: center;
+      color: var(--muted);
+      font-weight: 650;
+      line-height: 1.45;
+      background: linear-gradient(180deg, rgba(255,255,255,0.7), rgba(255,255,255,0.9));
+    }
+
+    .badge {
+      position: absolute;
+      top: 12px;
+      left: 12px;
+      background: rgba(18, 32, 51, 0.76);
+      color: #fff;
+      border-radius: 999px;
+      padding: 6px 10px;
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.02em;
+      backdrop-filter: blur(6px);
+    }
+
+    .body {
+      padding: 16px 16px 18px;
+      display: grid;
+      gap: 10px;
+    }
+
+    .title {
+      margin: 0;
+      font-size: 1.02rem;
+      line-height: 1.35;
+      letter-spacing: -0.01em;
+    }
+
+    .authors, .track {
+      margin: 0;
+      color: var(--muted);
+      line-height: 1.5;
+      font-size: 0.95rem;
+    }
+
+    .meta-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      justify-content: space-between;
+      align-items: center;
+      padding-top: 4px;
+    }
+
+    .linkbtn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 13px;
+      border-radius: 12px;
+      background: rgba(36, 87, 255, 0.08);
+      color: var(--accent);
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 0.93rem;
+      border: 1px solid rgba(36, 87, 255, 0.16);
+    }
+
+    .linkbtn.disabled {
+      background: #f3f4f6;
+      color: #9ca3af;
+      border-color: #e5e7eb;
+      cursor: not-allowed;
+      pointer-events: none;
+    }
+
+    .empty {
+      display: none;
+      padding: 30px;
+      text-align: center;
+      color: var(--muted);
+      background: rgba(255,255,255,0.75);
+      border: 1px dashed var(--border);
+      border-radius: var(--radius-lg);
+      margin-top: 18px;
+    }
+
+    .footer {
+      margin-top: 22px;
+      color: var(--muted);
+      font-size: 0.94rem;
+      text-align: center;
+    }
+
+    .modal {
+      position: fixed;
+      inset: 0;
+      background: rgba(10, 15, 24, 0.72);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+      z-index: 100;
+    }
+
+    .modal.open { display: flex; }
+
+    .modal-card {
+      width: min(96vw, 1100px);
+      max-height: 92vh;
+      background: #fff;
+      border-radius: 24px;
+      box-shadow: 0 30px 90px rgba(0, 0, 0, 0.35);
+      overflow: hidden;
+      display: grid;
+      grid-template-rows: auto 1fr;
+    }
+
+    .modal-head {
+      display: flex;
+      justify-content: space-between;
+      gap: 18px;
+      align-items: center;
+      padding: 16px 18px;
+      border-bottom: 1px solid rgba(18,32,51,0.12);
+      background: #fbfcff;
+    }
+
+    .modal-head strong {
+      display: block;
+      font-size: 1rem;
+      margin-bottom: 4px;
+    }
+
+    .modal-head span {
+      color: var(--muted);
+      font-size: 0.94rem;
+    }
+
+    .close {
+      border: 0;
+      background: rgba(18,32,51,0.08);
+      color: var(--text);
+      border-radius: 999px;
+      width: 42px;
+      height: 42px;
+      font-size: 20px;
+      cursor: pointer;
+      flex: 0 0 auto;
+    }
+
+    .modal-body {
+      display: grid;
+      place-items: center;
+      background: linear-gradient(180deg, #f7f9ff, #eef3ff);
+      overflow: auto;
+      padding: 18px;
+    }
+
+    .modal-body img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 12px;
+      box-shadow: 0 12px 40px rgba(0,0,0,0.18);
+      background: #fff;
+    }
+
+    @media (max-width: 1120px) {
+      .grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .stats { grid-template-columns: 1fr 1fr; }
+      .toolbar { grid-template-columns: 1fr; }
+      .filters { justify-content: flex-start; }
+    }
+
+    @media (max-width: 720px) {
+      .wrap { width: min(calc(100% - 18px), var(--maxw)); padding-top: 10px; }
+      .hero { padding: 20px; border-radius: 22px; }
+      .grid { grid-template-columns: 1fr; }
+      .stats { grid-template-columns: 1fr; }
+      h1 { font-size: clamp(1.8rem, 8vw, 2.5rem); }
+    }
+  </style>
+</head>
+<body>
+  <main class="wrap">
+    <section class="hero">
+      <div class="eyebrow">CV4Edu · Virtual Poster Session</div>
+      <h1>Computer Vision × Education: Building a Cross-Community Agenda for Multimodal Vision in Classrooms</h1>
+	  <p class="session-info">
+		  <div><strong>Workshop:</strong> June 4, 1:00 PM – 6:00 PM, Room 113  
+		  <strong>Poster Exhibition:</strong> Hall A (135–149)</div>
+	  </p>
+      <p class="subtitle">
+        Browse the 29 posters in our virtual exhibition. 
+        Click a poster to view the full-size version.
+      </p>
+
+      <div class="stats" id="stats">
+        <div class="stat"><span class="k">Posters</span><span class="v" id="countAll">29</span></div>
+        <div class="stat"><span class="k">Tracks</span><span class="v" id="countTracks">—</span></div>
+        <div class="stat"><span class="k">Visible</span><span class="v" id="countVisible">29</span></div>
+      </div>
+
+      <div class="toolbar">
+        <label class="search" aria-label="Search posters">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="11" cy="11" r="7"></circle>
+            <path d="m20 20-3.5-3.5"></path>
+          </svg>
+          <input id="searchInput" type="search" placeholder="Search title, authors, or track" />
+        </label>
+        <div class="filters" id="filters"></div>
+      </div>
+    </section>
+
+    <section class="content">
+      <div class="grid" id="posterGrid"></div>
+      <div class="empty" id="emptyState">No posters match your search or filter.</div>
+    </section>
+  </main>
+
+  <div class="modal" id="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <div class="modal-card">
+      <div class="modal-head">
+        <div>
+          <strong id="modalTitle">Poster preview</strong>
+          <span id="modalMeta"></span>
+        </div>
+        <button class="close" id="closeModal" aria-label="Close preview">×</button>
+      </div>
+      <div class="modal-body">
+        <img id="modalImg" alt="Poster preview" />
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const posters = [
+      {
+		"id": 1,
+		"title": "VLMath: A Multimodal Vision-Language System for Pedagogically Aligned Math Tutoring",
+		"authors": "Mahsa Ardakani, Arshia Eslami, Ramtin Zand",
+		"track": "Archival",
+		"image": "jpg/CVPR26_VLMath_Poster-final_MA.jpg",
+		"pdf": "../posters/CVPR26_VLMath_Poster-final_MA.pdf"
+	  },
+	  {
+		"id": 2,
+		"title": "Context Matters: Peer-Aware Student Behavioral Engagement Measurement via VLM Action Parsing and LLM Sequence Classification",
+		"authors": "Ahmed Abdelkawy, Ahmed Elsayed, Asem Ali, Aly Farag, Thomas Tretter, Michael McIntyre",
+		"track": "Archival",
+		"image": "jpg/ContextMatters-CV4Edu-5.jpg",
+		"pdf": "../posters/ContextMatters-CV4Edu-5.pdf"
+	  },
+	  {
+		"id": 3,
+		"title": "Sequence-Based Identification of First-Person Camera Wearers in Third-Person Views",
+		"authors": "Ziwei Zhao, Xizi Wang, Yuchen Wang, Feng Cheng, David J. Crandall",
+		"track": "Archival",
+		"image": "jpg/CV4Edu poster paper 6.jpg",
+		"pdf": "../posters/CV4Edu poster paper 6.pdf"
+	  },
+	  {
+		"id": 4,
+		"title": "Cross-modal Affinity-aligned Multimodal Learning Analytics for Predicting Student Collaboration Satisfaction in Game-Based Learning",
+		"authors": "Wen-Hsin Tsai, Chia-Ming Lee, Yuk-Ying Tung",
+		"track": "Archival",
+		"image": "jpg/CV4Edu Workshop – Paper ID 9 Poster.jpg",
+		"pdf": "../posters/CV4Edu Workshop – Paper ID 9 Poster.pdf"
+	  },
+	  {
+		"id": 5,
+		"title": "CSU101: An Educational Dataset for Introductory Computer Vision",
+		"authors": "Ethan Seefried, Changsoo Jung, Videep Venkatesha, Trevor Chartier, Caleb Christian, Jack Fitzgerald, Mariah Bradford, Sifatul Anindho, Matthew Sturgeon, Nathaniel Blanchard",
+		"track": "Archival",
+		"image": "jpg/CSU101-CVPR-Poster-pdf.jpg",
+		"pdf": "../posters/CSU101-CVPR-Poster-pdf.pdf"
+	  },
+	  {
+		"id": 6,
+		"title": "MES-Bench: A Benchmark for Multimodal Elaborative Simplification and Comprehensibility Evaluation in Language Learning",
+		"authors": "Martyna Gruszka, Risa Shinoda, Taiki Miyanishi, Takumi Hirose, Nakamasa Inoue",
+		"track": "Archival",
+		"image": "jpg/12_MES-Bench-poster.jpg",
+		"pdf": "../posters/12_MES-Bench-poster.pdf"
+	  },
+	  {
+		"id": 7,
+		"title": "ReSoFed: Reliability-Guided Model Souping for Robust Federated Learning in Heterogeneous Classroom Environments",
+		"authors": "Muhammad Rafsan Kabir, Md Shopon, Marina Gavrilova",
+		"track": "Archival",
+		"image": "jpg/CV4Edu-14 Poster.jpg",
+		"pdf": "../posters/CV4Edu-14 Poster.pdf"
+	  },
+	  {
+		"id": 8,
+		"title": "InterventionLens: A Multi-Agent Framework for Detecting ASD Intervention Strategies in Parent-Child Shared Reading",
+		"authors": "Xiao Wang, Lu Dong, Ifeoma Nwogu, Srirangaraj Setlur, Venu Govindaraju",
+		"track": "Archival",
+		"image": "jpg/Xiao Wang - CV4Edu - CV4Edu-15.jpg",
+		"pdf": "../posters/Xiao Wang - CV4Edu - CV4Edu-15.pdf"
+	  },
+	  {
+		"id": 9,
+		"title": "Delta-Gated Incremental Multi-Forward-Pass Modeling for Robust Multimodal Classroom Video Understanding",
+		"authors": "Chongyu He, Peter Youngs, Scott Acton",
+		"track": "Archival",
+		"image": "jpg/CV4Edu-17_DG-MFP_Poster.jpg",
+		"pdf": "../posters/CV4Edu-17_DG-MFP_Poster.pdf"
+	  },
+	  {
+		"id": 10,
+		"title": "AI-Assisted Competency Assessment from Egocentric Video in Simulation-Based Nursing Education",
+		"authors": "Hanchen David Wang, Yilin Liu, Madison Mason, Surya Rayala, Gautam Biswas, Daniel Levin, Meiyi Ma",
+		"track": "Archival",
+		"image": "",
+		"pdf": ""
+	  },
+	  {
+		"id": 11,
+		"title": "ConfusionBench: An Expert-Validated Benchmark for Confusion Recognition and Localization in Educational Videos",
+		"authors": "Lu Dong, Xiao Wang, Mark Frank, Srirangaraj Setlur, Venu Govindaraju, Ifeoma Nwogu",
+		"track": "Archival",
+		"image": "jpg/CVPRW_Poster_LuDong_Final.jpg",
+		"pdf": "../posters/CVPRW_Poster_LuDong_Final.pdf"
+	  },
+	  {
+		"id": 12,
+		"title": "Evaluating Web-trained Facial Expression Recognition in Naturalistic Collaborative Learning",
+		"authors": "Sifatul Anindho, Videep Venkatesha, Nathaniel Blanchard",
+		"track": "Archival",
+		"image": "jpg/CV4Ed-21-2026-final.jpg",
+		"pdf": "../posters/CV4Ed-21-2026-final.pdf"
+	  },
+	  {
+		"id": 13,
+		"title": "Scaffolding Human Learning by Shaping Visual Environment",
+		"authors": "Yuji Zhang, Duo Zhou, Bo Chen, Adi Chalasani, Noah Schroeder, H Chad Lane, ChengXiang Zhai",
+		"track": "Archival",
+		"image": "",
+		"pdf": ""
+	  },
+	  {
+		"id": 14,
+		"title": "From Emotion Recognition to Mind-Wandering Detection: A Comparative Analysis of Video-Based Emotion Foundation Models",
+		"authors": "Ekta Sood, Sebastian Ricke, Trisha Mittal, Sidney K. DMello",
+		"track": "Archival",
+		"image": "",
+		"pdf": ""
+	  },
+	  {
+		"id": 15,
+		"title": "Do Emotion Recognition Models Generalize to Classrooms? Robustness and Fairness Analysis",
+		"authors": "Ashwin T S, Srigowri Mayasandra Prasanna, Joyce Horn Fonteles, Gautam Biswas",
+		"track": "Archival",
+		"image": "jpg/CVPR_2026_Classroom_Emotion_Poster_Final_42x21.jpg",
+		"pdf": "../posters/CVPR_2026_Classroom_Emotion_Poster_Final_42x21.pdf"
+	  },
+	  {
+		"id": 16,
+		"title": "Diagnosis of Human–Object Interaction Detectors for Real-World Educational Applications",
+		"authors": "Divya Mereddy, Ashwin T S, Marcos Quinones Grueiro, Gautam Biswas",
+		"track": "Archival",
+		"image": "",
+		"pdf": ""
+	  },
+	  {
+		"id": 17,
+		"title": "Speech-Synchronized Whiteboard Generation via VLM-Driven Structured Drawing Representations",
+		"authors": "Suraj Prasad, Pinak Mahapatra",
+		"track": "Archival",
+		"image": "",
+		"pdf": ""
+	  },
+	  {
+		"id": 1,
+		"title": "Code2Video: A Code-centric Paradigm for Educational Video Creation",
+		"authors": "Yanzhe Chen, Kevin Qinghong Lin, Mike Zheng Shou",
+		"track": "Non-Archival",
+		"image": "",
+		"pdf": ""
+	  },
+	  {
+		"id": 2,
+		"title": "Paper2Video: Automatic Video Generation from Scientific Papers",
+		"authors": "Zeyu Zhu, Kevin Qinghong Lin, Mike Zheng Shou",
+		"track": "Non-Archival",
+		"image": "",
+		"pdf": ""
+	  },
+	  {
+		"id": 3,
+		"title": "From Knowing to Drawing: Teaching Vision-Language Models Spatial Programs for Educational Diagrams via Visual RL",
+		"authors": "Pinak Mahapatra, Suraj Prasad",
+		"track": "Non-Archival",
+		"image": "",
+		"pdf": ""
+	  },
+	  {
+		"id": 4,
+		"title": "STARVIS: A Multimodal Framework for Standards-Aligned Video Classification in Elementary Science Education",
+		"authors": "Twumasi Mensah-Boateng, Anirban Roy, Marta K. Mielicki, Nonye M Alozie, Ramneet Kaur, Jing Yuan",
+		"track": "Non-Archival",
+		"image": "jpg/STARVIS CVPR 2026 FINAL.jpg",
+		"pdf": "posters/STARVIS CVPR 2026 FINAL.pdf"
+	  },
+	  {
+		"id": 5,
+		"title": "Sketch2Feedback: A Grammar-in-the-Loop Framework for Rubric-Aligned Feedback on Student STEM Diagrams",
+		"authors": "Aayam Bansal",
+		"track": "Non-Archival",
+		"image": "",
+		"pdf": ""
+	  },
+	  {
+		"id": 6,
+		"title": "Zero-Shot Vision-Language Models for Classroom Engagement Recognition: A Benchmark Study of Prompt Sensitivity and Cross-Dataset Generalization",
+		"authors": "Aman Goyal, Kshama Nitin Shah",
+		"track": "Non-Archival",
+		"image": "jpg/VLM_Engagement_Poster.jpg",
+		"pdf": "posters/VLM_Engagement_Poster.pdf"
+	  },
+	  {
+		"id": 7,
+		"title": "AutoOEP: A Multi-Cue Framework for Online Exam Proctoring",
+		"authors": "Aryan Kashyap Naveen, Bhuvanesh Singla, Raajan R Wankhade, Shreesha M, Ramu S, Ram Mohana Reddy Guddeti",
+		"track": "Non-Archival",
+		"image": "",
+		"pdf": ""
+	  },
+	  {
+		"id": 8,
+		"title": "How Much Do We Lose? Quantifying the Impact of Face De-identification on Classroom Computer Vision Tasks",
+		"authors": "Yanhang Li, Zhichao Fan, Zexin Zhuang",
+		"track": "Non-Archival",
+		"image": "",
+		"pdf": ""
+	  },
+	  {
+		"id": 9,
+		"title": "Do We Need Faces? Privacy-Preserving Engagement Detection via Face-Free Features in Classroom Video",
+		"authors": "Yanhang Li, Zhichao Fan, Zexin Zhuang",
+		"track": "Non-Archival",
+		"image": "",
+		"pdf": ""
+	  },
+	  {
+		"id": 10,
+		"title": "Socratic: Pushing the Boundaries of Interactive Visual Educational Content Creation.",
+		"authors": "Siddharth Manne, Shaden Alshammari, Satish Somaraju",
+		"track": "Non-Archival",
+		"image": "",
+		"pdf": ""
+	  },
+	  {
+		"id": 11,
+		"title": "Modeling Epistemic Vigilance in Collaborative Problem Solving: A Multimodal Approach Using Social Deduction as a Proxy Testbed",
+		"authors": "Videep Venkatesha, Ethan Seefried, Changsoo Jung, Nathaniel Blanchard",
+		"track": "Non-Archival",
+		"image": "jpg/final_cvpr_poster.jpg",
+		"pdf": "posters/final_cvpr_poster.pdf"
+	  },
+	  {
+		"id": 12,
+		"title": "EduLens: A Self-Evolving AI Agent on Smart Glasses for Adaptive Teaching Support via Continuous Classroom Perception",
+		"authors": "Thai Quoc Hoang, Ran Xu",
+		"track": "Non-Archival",
+		"image": "",
+		"pdf": ""
+	  }
+    ];
+
+    const grid = document.getElementById('posterGrid');
+    const filtersEl = document.getElementById('filters');
+    const searchInput = document.getElementById('searchInput');
+    const emptyState = document.getElementById('emptyState');
+    const countAll = document.getElementById('countAll');
+    const countVisible = document.getElementById('countVisible');
+    const countTracks = document.getElementById('countTracks');
+
+    const modal = document.getElementById('modal');
+    const modalImg = document.getElementById('modalImg');
+    const modalTitle = document.getElementById('modalTitle');
+    const modalMeta = document.getElementById('modalMeta');
+    const closeModal = document.getElementById('closeModal');
+
+    let activeTrack = 'All';
+
+    const tracks = ['All', ...new Set(posters.map(p => p.track))];
+    countAll.textContent = posters.length;
+    countTracks.textContent = new Set(posters.map(p => p.track)).size;
+
+    function escapeHtml(str) {
+      return String(str)
+        .replaceAll('&', '&amp;')
+        .replaceAll('<', '&lt;')
+        .replaceAll('>', '&gt;')
+        .replaceAll('"', '&quot;')
+        .replaceAll("'", '&#39;');
+    }
+
+    function renderFilters() {
+      filtersEl.innerHTML = tracks.map(track => `
+        <button class="chip ${track === activeTrack ? 'active' : ''}" data-track="${escapeHtml(track)}">
+          ${escapeHtml(track)}
+        </button>
+      `).join('');
+
+      filtersEl.querySelectorAll('.chip').forEach(btn => {
+        btn.addEventListener('click', () => {
+          activeTrack = btn.dataset.track;
+          renderFilters();
+          renderGrid();
+        });
+      });
+    }
+
+    function posterMatches(poster, query) {
+      if (!query) return true;
+      const q = query.toLowerCase();
+      return [poster.title, poster.authors, poster.track].some(v => String(v).toLowerCase().includes(q));
+    }
+
+    function posterCard(poster) {
+      const imgHtml = poster.image
+        ? `<img src="${escapeHtml(poster.image)}" alt="${escapeHtml(poster.title)}">`
+        : `<div class="fallback">Coming soon!</div>`;
+
+      const buttonHtml = poster.pdf
+      ? `
+        <a class="linkbtn"
+          href="${escapeHtml(poster.pdf)}"
+          target="_blank"
+          rel="noreferrer">
+          Open full poster
+          <span aria-hidden="true">↗</span>
+        </a>
+      `
+      : `
+        <span class="linkbtn disabled">
+          Poster coming soon
+        </span>
+      `;
+
+      return `
+        <article class="card">
+		      <div class="body">
+            <h3 class="title">${escapeHtml(poster.title)}</h3>
+            <p class="authors"><strong>Authors:</strong> ${escapeHtml(poster.authors)}</p>
+            <p class="track"><strong>Track:</strong> ${escapeHtml(poster.track)}</p>
+            <div class="meta-row">
+              ${buttonHtml}
+            </div>
+          </div>
+          <div class="poster" data-index="${posters.indexOf(poster)}" title="Open poster preview">
+            <span class="badge">#${String(poster.id).padStart(2, '0')}</span>
+            ${imgHtml}
+          </div>   
+        </article>
+      `;
+    }
+
+    function renderGrid() {
+      const query = searchInput.value.trim();
+      const visible = posters.filter(p => {
+        const trackOk = activeTrack === 'All' || p.track === activeTrack;
+        return trackOk && posterMatches(p, query);
+      });
+
+      countVisible.textContent = visible.length;
+      emptyState.style.display = visible.length ? 'none' : 'block';
+      grid.innerHTML = visible.map(posterCard).join('');
+
+      grid.querySelectorAll('.poster').forEach(el => {
+        const idx = Number(el.dataset.index);
+        const poster = posters[idx];
+        if (!poster.image) return;
+        el.addEventListener('click', () => {
+          const idx = Number(el.dataset.index);
+          const poster = posters[idx];
+          modalTitle.textContent = poster.title;
+          modalMeta.textContent = `${poster.authors} · ${poster.track}`;
+          modalImg.src = poster.image || poster.pdf || '';
+          modalImg.alt = poster.title;
+          modal.classList.add('open');
+        });
+      });
+    }
+
+    function close() {
+      modal.classList.remove('open');
+      modalImg.src = '';
+    }
+
+    searchInput.addEventListener('input', renderGrid);
+    closeModal.addEventListener('click', close);
+    modal.addEventListener('click', (e) => { if (e.target === modal) close(); });
+    document.addEventListener('keydown', (e) => { if (e.key === 'Escape') close(); });
+
+    renderFilters();
+    renderGrid();
+  </script>
+</body>
+</html>
